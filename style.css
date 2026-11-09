@@ -3298,3 +3298,39 @@ h3 {
 .hero-visual .floating-card {
     display: none !important;
 }
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
