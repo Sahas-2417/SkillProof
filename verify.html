@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Verify Credential — SkillProof</title>
+
+    <meta
+        name="description"
+        content="Verify a SkillProof credential directly from the blockchain."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body data-page="verify">
+
+    <div class="background-grid"></div>
+
+    <div class="glow glow-one"></div>
+
+    <div class="glow glow-two"></div>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <div class="brand-mark">
+                <span>✓</span>
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    SkillProof
+                </div>
+
+                <div class="brand-subtitle">
+                    PUBLIC VERIFICATION
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="verify.html"
+                class="active"
+            >
+                Verify
+            </a>
+
+            <a href="credentials.html">
+                My Credentials
+            </a>
+
+            <a href="admin.html">
+                Issuer Portal
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <div class="network-pill">
+
+                <span class="status-dot"></span>
+
+                Sepolia
+
+            </div>
+
+
+            <a
+                href="credentials.html"
+                class="btn btn-secondary btn-small"
+            >
+                My Credentials
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="verify-page">
+
+
+        <!-- =================================================
+             VERIFICATION HERO
+        ================================================== -->
+
+        <section class="verify-hero">
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                PUBLIC BLOCKCHAIN VERIFICATION
+
+            </div>
+
+
+            <h1>
+                Verify a
+                <span>Credential.</span>
+            </h1>
+
+
+            <p>
+                Enter a SkillProof credential ID to verify
+                its authenticity directly from the blockchain.
+            </p>
+
+
+            <!-- =============================================
+                 SEARCH
+            ============================================== -->
+
+            <div class="verify-search">
+
+                <div class="search-input-wrapper">
+
+                    <span class="search-prefix">
+                        SP-
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="verifyInput"
+                        placeholder="000007"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="verifyBtn"
+                    class="btn btn-primary"
+                >
+                    Verify Credential
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <div class="verify-note">
+
+                <span>✓</span>
+
+                No wallet or account required
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VERIFICATION RESULT
+        ================================================== -->
+
+        <section
+            id="verifyResult"
+            class="verification-result hidden"
+        >
+
+            <!-- RESULT HEADER -->
+
+            <div class="verification-result-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        BLOCKCHAIN RESULT
+                    </div>
+
+                    <h2>
+                        Credential
+                        <span id="resultCredentialId">
+                            SP-000007
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="verificationStatus"
+                    class="verification-status valid"
+                >
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <strong>
+                        VERIFIED
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CREDENTIAL CARD
+            ================================================== -->
+
+            <div class="verified-credential-card">
+
+
+                <div class="verified-card-top">
+
+
+                    <div class="credential-logo">
+
+                        <div class="mini-mark">
+                            ✓
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                SKILLPROOF
+                            </strong>
+
+                            <small>
+                                BLOCKCHAIN CREDENTIAL
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="verified-stamp">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        AUTHENTIC
+
+                    </div>
+
+                </div>
+
+
+                <div class="verified-card-body">
+
+
+                    <div class="certificate-label">
+                        VERIFIED ACHIEVEMENT
+                    </div>
+
+
+                    <h2 id="resultTitle">
+                        Achievement
+                    </h2>
+
+
+                    <div class="verified-details">
+
+
+                        <div class="verified-detail">
+
+                            <span>
+                                HOLDER
+                            </span>
+
+                            <strong
+                                id="resultHolder"
+                                class="wallet-text"
+                            >
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="verified-detail">
+
+                            <span>
+                                ISSUED BY
+                            </span>
+
+                            <strong id="resultIssuer">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="verified-detail">
+
+                            <span>
+                                ISSUED ON
+                            </span>
+
+                            <strong id="resultDate">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="verified-detail">
+
+                            <span>
+                                CREDENTIAL
+                            </span>
+
+                            <strong id="resultId">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="verified-card-footer">
+
+
+                    <div>
+
+                        <span>
+                            NETWORK
+                        </span>
+
+                        <strong>
+                            Ethereum Sepolia
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong id="resultStatusText">
+                            Verified on-chain
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 ACTIONS
+            ================================================== -->
+
+            <div class="verification-actions">
+
+
+                <button
+                    type="button"
+                    id="copyVerifyLink"
+                    class="btn btn-secondary"
+                >
+                    Copy Verification Link
+                </button>
+
+
+                <a
+                    id="etherscanLink"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    View on Etherscan ↗
+                </a>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 BLOCKCHAIN PROOF
+            ================================================== -->
+
+            <div class="proof-box">
+
+                <div class="proof-icon">
+                    ⬡
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Verified directly from the blockchain
+                    </strong>
+
+                    <p>
+                        This result was read from the deployed
+                        SkillProof smart contract on Ethereum Sepolia.
+                        No centralized database was used to verify it.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             INITIAL INFO
+        ================================================== -->
+
+        <section
+            id="verifyInfo"
+            class="verify-info"
+        >
+
+
+            <div class="verify-info-card">
+
+                <div class="verify-info-icon">
+                    01
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Enter the credential ID
+                    </h3>
+
+                    <p>
+                        Use the unique ID printed on the SkillProof
+                        credential, such as SP-000007.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="verify-info-card">
+
+                <div class="verify-info-icon">
+                    02
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Blockchain lookup
+                    </h3>
+
+                    <p>
+                        SkillProof reads the credential record
+                        directly from Ethereum Sepolia.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="verify-info-card">
+
+                <div class="verify-info-icon">
+                    03
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Trust the result
+                    </h3>
+
+                    <p>
+                        The result shows whether the credential
+                        exists and whether it has been revoked.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <div class="brand-mark">
+                <span>✓</span>
+            </div>
+
+
+            <div>
+
+                <strong>
+                    SkillProof
+                </strong>
+
+                <span>
+                    Blockchain-based credential verification
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-right">
+            Ethereum Sepolia
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+
+        <span id="toastIcon">
+            ✓
+        </span>
+
+        <span id="toastMessage">
+            Credential verified
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         ETHERS
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"
+    ></script>
+
+
+    <!-- =====================================================
+         SKILLPROOF APP
+    ====================================================== -->
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
